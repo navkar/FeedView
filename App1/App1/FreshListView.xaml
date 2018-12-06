@@ -20,9 +20,9 @@
         <ListView.Header>
             <StackLayout Padding="10,0,10,0">
                 <BoxView Color="Transparent" HeightRequest="5" />
-                <ffimageloading:CachedImage 
-                    WidthRequest="50" HeightRequest="50"
-                    LoadingPlaceholder="loading.png" ErrorPlaceholder="error.png" Source="buddha.png">
+                <ffimageloading:CachedImage Aspect="AspectFit" 
+                    WidthRequest="100" HeightRequest="100"
+                    LoadingPlaceholder="loading.png" ErrorPlaceholder="error.png" Source="swastika.png">
                 </ffimageloading:CachedImage>
                 <Label x:Name="TodaysDate" TextColor="AntiqueWhite" HorizontalOptions="Center" />
                 <Label FontAttributes="Bold" TextColor="AntiqueWhite" HorizontalOptions="Center" Text="10 users have said 'OM' today" />
