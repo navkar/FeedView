@@ -5,8 +5,9 @@
 * []()
 
 
-UserActivityFeed
+**UserActivityFeed** 
 
+```
 Id
 SenderUserId
 SenderFirstName
@@ -22,3 +23,4 @@ Lng
 ReverseGeo
 IsDeleted
 IsFlagged
+```
