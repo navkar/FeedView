@@ -25,3 +25,6 @@ ReverseGeo
 IsDeleted
 IsFlagged
 ```
+
+https://gist.github.com/skarllot/11e94ed8901a9ddabdf05c0e5c08dbc5
+
