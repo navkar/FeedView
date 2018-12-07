@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using FreshMvvm;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace App1
@@ -11,7 +12,7 @@ namespace App1
         {
             InitializeComponent();
 
-            MainPage = new HorizonalScrollPage();
+            MainPage = new NavigationPage(new HorizonalScrollPage());
         }
 
         protected override void OnStart()

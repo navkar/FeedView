@@ -17,7 +17,9 @@ namespace App1
 
             for (int i = 0; i <= userCount; i++)
             {
-                dataModel.Add(new ListDataModel() { IconUri = "user.png", Text = string.Format("{0}", DateTime.UtcNow.Ticks) });
+                dataModel.Add(new ListDataModel() { IconUri = "swastika.png",
+                    User = "Lord Kubera",
+                    Text = string.Format("{0}", DateTime.UtcNow.Ticks) });
             }
 
             return dataModel;
