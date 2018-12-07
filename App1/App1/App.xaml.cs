@@ -11,7 +11,7 @@ namespace App1
         {
             InitializeComponent();
 
-            MainPage = new FreshListView();
+            MainPage = new HorizonalScrollPage();
         }
 
         protected override void OnStart()

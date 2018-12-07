@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:App1.Controls"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             BackgroundColor="#FFFFFF"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"             
+             x:Class="App1.HorizonalScrollPage">
+    <xfg:ContentPageGloss.BackgroundGradient>
+        <xfg:Gradient Rotation="170">
+            <xfg:GradientStep StepColor="{StaticResource gradientBegin}" StepPercentage="0" />
+            <xfg:GradientStep StepColor="{StaticResource gradientEnd}" StepPercentage="1" />
+        </xfg:Gradient>
+    </xfg:ContentPageGloss.BackgroundGradient>    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="70*" />
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0">
+                <ScrollView Orientation="Horizontal">
+                    <controls:HorizontalStackLayout x:Name="ButtonStack" Orientation="Horizontal">
+                        <controls:HorizontalStackLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame HeightRequest="150" WidthRequest="150" BackgroundColor="#bdc3c7" Margin="16">
+                                    <StackLayout>
+                                        <BoxView Color="Transparent" HeightRequest="1" />
+                                        <ffimageloading:CachedImage Aspect="AspectFit" WidthRequest="75" HeightRequest="75" 
+                                                                    LoadingPlaceholder="loading.png" ErrorPlaceholder="error.png" 
+                                                                    Source="{Binding IconUri}">
+                                        </ffimageloading:CachedImage>
+                                        <Label TextColor="AntiqueWhite" Text="{Binding Text}" />
+                                        <BoxView Color="{StaticResource gradientEnd}" HeightRequest="10" />
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </controls:HorizontalStackLayout.ItemTemplate>
+                    </controls:HorizontalStackLayout>
+                </ScrollView>
+            </StackLayout>
+            <StackLayout Grid.Row="1">
+
+
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
