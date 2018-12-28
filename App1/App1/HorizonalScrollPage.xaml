@@ -21,22 +21,22 @@
                 HasUnevenRows="True">
             <ListView.Header>
                 <StackLayout Padding="10,0,10,0">
-                    <Label HorizontalTextAlignment="Center" TextColor="AntiqueWhite" FontSize="Small" Text="TOP 5 MANTRAS" />
+                    <Label HorizontalTextAlignment="Center" TextColor="AntiqueWhite" FontSize="Small" Text="AVATARS" />
                     <BoxView Color="AntiqueWhite" HeightRequest="1" />
                     <ScrollView Orientation="Horizontal">
                         <controls:HorizontalStackLayout x:Name="ButtonStack" Orientation="Horizontal">
                             <controls:HorizontalStackLayout.ItemTemplate>
                                 <DataTemplate>
-                                    <Frame HeightRequest="150" WidthRequest="150" BackgroundColor="#bdc3c7" Margin="16">
+                                    <Frame HeightRequest="15" WidthRequest="60" BackgroundColor="#bdc3c7" HasShadow="False" Margin="0">
                                         <StackLayout HorizontalOptions="CenterAndExpand">
-                                            <BoxView Color="Transparent" HeightRequest="1" />
-                                            <ffimageloading:CachedImage Aspect="AspectFit" WidthRequest="75" HeightRequest="75" 
+                                            <!--<BoxView Color="Transparent" HeightRequest="1" />-->
+                                            <!--<ffimageloading:CachedImage Aspect="AspectFit" WidthRequest="75" HeightRequest="75" 
                                                                         LoadingPlaceholder="loading.png" ErrorPlaceholder="error.png" 
                                                                         Source="{Binding IconUri}">
-                                            </ffimageloading:CachedImage>
-                                            <Label HorizontalTextAlignment="Center" TextColor="AntiqueWhite" LineBreakMode="TailTruncation" Text="{Binding User}" />
-                                            <Label HorizontalTextAlignment="Center" TextColor="AntiqueWhite" LineBreakMode="TailTruncation" Text="{Binding Text}" />
-                                            <BoxView Color="{StaticResource gradientEnd}" HeightRequest="5" />
+                                            </ffimageloading:CachedImage>-->
+                                            <!--<Label HorizontalTextAlignment="Center" TextColor="AntiqueWhite" LineBreakMode="TailTruncation" Text="{Binding User}" />-->
+                                            <Label HorizontalTextAlignment="Center" TextColor="AntiqueWhite" LineBreakMode="TailTruncation" Text="{Binding StateCode}" />
+                                            <!--<BoxView Color="{StaticResource gradientEnd}" HeightRequest="5" />-->
                                         </StackLayout>
                                         <Frame.GestureRecognizers>
                                             <TapGestureRecognizer Command="ItemTapped" />

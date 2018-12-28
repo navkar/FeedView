@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App1.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -21,13 +22,14 @@ namespace App1
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            ButtonStack.ItemsSource = ListDataModel.MockUserData();
+            ButtonStack.ItemsSource = MarketplaceFeedModel.MockUserData();
 
-            var dataModel = new ObservableCollection<ListDataModel>();
-
+            var dataModel = new ObservableCollection<MarketplaceFeedModel>();
+            
             for (int i = 0; i < 10; i++)
             {
-                dataModel.Add(new ListDataModel() { IconUri = "user.png", Text = string.Format("This is going to be a long status message. This is going to be a long status message. This is going to be a long status message. This is going to be a long status message. Hope you got it. {0} says 'OM'.", DateTime.UtcNow.Ticks) });
+                dataModel.Add(new MarketplaceFeedModel() { IconUri = "user.png",
+                    AdText = string.Format("This is going to be a long status message. This is going to be a long status message. This is going to be a long status message. This is going to be a long status message. Hope you got it. {0} says 'OM'.", DateTime.UtcNow.Ticks) });
             }
 
             UserLV.ItemsSource = dataModel;

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="App1.Controls.MarketplaceTextViewCell">
+    <StackLayout Margin="15" Padding="5,0,5,0">
+        <BoxView BackgroundColor="White" HeightRequest="1" />
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="70*" />
+            </Grid.ColumnDefinitions>
+
+            <ffimageloading:CachedImage Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"
+                            WidthRequest="50" HeightRequest="50" 
+                            LoadingPlaceholder="loading.png" 
+                            ErrorPlaceholder="error.png" Source="{Binding IconUri}" />
+
+            <Label Grid.Row="0" Grid.Column="1" TextColor="AntiqueWhite" HorizontalTextAlignment="Start" Text="{Binding User}" />
+            <Label Grid.Row="1" Grid.Column="1" TextColor="AntiqueWhite" Text="{Binding OrgName}" />
+            <Label Grid.Row="2" Grid.Column="1" TextColor="AntiqueWhite" Text="{Binding FormattedDateTime}" />
+        </Grid>
+        <Label FontSize="Large" FontAttributes="Bold" TextColor="AntiqueWhite" Text="{Binding AdCaption}" />
+        <Label TextColor="AntiqueWhite" Text="{Binding AdText}" />
+        <BoxView BackgroundColor="White" HeightRequest="1" />
+    </StackLayout>
+</ViewCell>

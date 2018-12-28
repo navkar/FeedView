@@ -2,19 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:controls="clr-namespace:App1.Controls;assembly=App1"
              BackgroundColor="#FFFFFF"
              xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
-             x:Class="App1.FreshListView">
+             x:Class="App1.Views.MarketplaceFeedView">
     <xfg:ContentPageGloss.BackgroundGradient>
         <xfg:Gradient Rotation="170">
             <xfg:GradientStep StepColor="{StaticResource gradientBegin}" StepPercentage="0" />
             <xfg:GradientStep StepColor="{StaticResource gradientEnd}" StepPercentage="1" />
         </xfg:Gradient>
     </xfg:ContentPageGloss.BackgroundGradient>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <controls:MarketplaceTemplateSelector x:Key="FeedTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
     <ListView x:Name="UserLV" 
               BackgroundColor="Transparent"
-              RowHeight="100" 
+              RowHeight="150" 
+              ItemsSource="{Binding MarketplaceFeed}"
+              ItemTemplate="{StaticResource FeedTemplateSelector}"              
               SeparatorVisibility="None"
               HasUnevenRows="True">
         <ListView.Header>
@@ -22,30 +30,13 @@
                 <BoxView Color="Transparent" HeightRequest="5" />
                 <ffimageloading:CachedImage Aspect="AspectFit" 
                     WidthRequest="100" HeightRequest="100"
-                    LoadingPlaceholder="loading.png" ErrorPlaceholder="error.png" Source="swastika.png">
+                    LoadingPlaceholder="loading.png" ErrorPlaceholder="error.png" Source="user.png">
                 </ffimageloading:CachedImage>
                 <Label x:Name="TodaysDate" TextColor="AntiqueWhite" HorizontalOptions="Center" />
                 <Label FontAttributes="Bold" TextColor="AntiqueWhite" HorizontalOptions="Center" Text="10 users have said 'OM' today" />
                 <BoxView Color="Transparent" HeightRequest="10" />
             </StackLayout>
         </ListView.Header>
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <Frame BackgroundColor="Transparent" Margin="25,25,25,25" BorderColor="White" HasShadow="False" CornerRadius="25">
-                        <StackLayout Padding="5,0,5,0">
-                            <ffimageloading:CachedImage 
-                                WidthRequest="45" HeightRequest="45" 
-                                LoadingPlaceholder="loading.png" 
-                                ErrorPlaceholder="error.png" Source="{Binding IconUri}">
-                            </ffimageloading:CachedImage>
-                                <Label TextColor="AntiqueWhite" HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="{Binding User}" />
-                                <Label TextColor="AntiqueWhite" Text="{Binding Text}" />
-                        </StackLayout>
-                    </Frame>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
     </ListView>
     </ContentPage.Content>
 </ContentPage>
