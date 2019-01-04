@@ -11,6 +11,7 @@ namespace App1
 {
     public partial class App : Application
     {
+        public static string User = "Naveen";
         public App()
         {
             InitializeComponent();
@@ -22,7 +23,12 @@ namespace App1
             var page = FreshPageModelResolver.ResolvePageModel<MarketplaceFeedViewModel>();
             var stack = new FreshNavigationContainer(page, "NewStack");
 
-            MainPage = stack;
+            
+            var chatPage = FreshPageModelResolver.ResolvePageModel<ChatPageViewModel>();
+            var chat = new FreshNavigationContainer(chatPage, "ChatStack");
+
+
+            MainPage = chat;
         }
 
         protected override void OnStart()
