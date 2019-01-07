@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:controls="clr-namespace:App1.Controls;assembly=App1"
+             BackgroundColor="#FFFFFF"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"             
+             x:Class="App1.Views.Dox">
+    <xfg:ContentPageGloss.BackgroundGradient>
+        <xfg:Gradient Rotation="170">
+            <xfg:GradientStep StepColor="#f9f9f9" StepPercentage="0" />
+            <xfg:GradientStep StepColor="#FFFFFF" StepPercentage="1" />
+        </xfg:Gradient>
+    </xfg:ContentPageGloss.BackgroundGradient>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <controls:DoxTemplateSelector x:Key="ViewTemplateSelector" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ListView x:Name="DoxLV" 
+              BackgroundColor="Transparent"
+              RowHeight="300" 
+              ItemTemplate="{StaticResource ViewTemplateSelector}"                        
+              SeparatorVisibility="None"
+              HasUnevenRows="True">
+            <ListView.Header>
+                <StackLayout Padding="10,0,10,0">
+                    <BoxView Color="Transparent" HeightRequest="5" />
+                    <ffimageloading:CachedImage Aspect="AspectFit" 
+                    WidthRequest="100" HeightRequest="100"
+                    LoadingPlaceholder="loading.png" ErrorPlaceholder="error.png" Source="user.png">
+                    </ffimageloading:CachedImage>
+                    <Label FontAttributes="Bold" FontSize="Large" TextColor="{StaticResource gradientBegin}" HorizontalOptions="Center" Text="ID Verification" />
+                    <Label TextColor="{StaticResource gradientBegin}" HorizontalOptions="Center" Text="To complete your account verification, you will need one piece of government-issued ID" />
+                    <BoxView Color="Transparent" HeightRequest="10" />
+                </StackLayout>
+            </ListView.Header>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

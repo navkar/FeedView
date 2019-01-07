@@ -5,6 +5,7 @@ using FreshMvvm;
 using App1.Helpers;
 using Acr.UserDialogs;
 using App1.ViewModels;
+using App1.Views;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace App1
@@ -28,7 +29,7 @@ namespace App1
             var chat = new FreshNavigationContainer(chatPage, "ChatStack");
 
 
-            MainPage = chat;
+            MainPage = new Dox();
         }
 
         protected override void OnStart()
