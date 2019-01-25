@@ -4,27 +4,28 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="App1.Views.TextOnlyViewCell">
   <ViewCell.View>
-        <Frame BackgroundColor="Transparent" Margin="15,25,15,25" BorderColor="#e7e7e7" HasShadow="False" CornerRadius="5">
+        <StackLayout>
+            <Frame BackgroundColor="Transparent" Margin="15,25,15,25" BorderColor="#e7e7e7" HasShadow="False" CornerRadius="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70*" />
+                        <ColumnDefinition Width="30*" />
+                    </Grid.ColumnDefinitions>    
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="70*" />
-                    <ColumnDefinition Width="30*" />
-                </Grid.ColumnDefinitions>    
+                    <StackLayout Grid.Column="0" Padding="1,0,1,0" VerticalOptions="CenterAndExpand">
+                        <Label FontSize="Medium" FontAttributes="Bold" TextColor="{StaticResource gradientBegin}" Text="{Binding OrgName}" />
+                    </StackLayout>
 
-                <StackLayout Grid.Column="0" Padding="1,0,1,0" VerticalOptions="CenterAndExpand">
-                    <Label FontSize="Medium" FontAttributes="Bold" TextColor="{StaticResource gradientBegin}" Text="{Binding OrgName}" />
-                </StackLayout>
-
-                <ffimageloading:CachedImage Grid.Column="1" 
-                    WidthRequest="45" 
-                    HeightRequest="45" 
-                    Aspect="AspectFit" 
-                    LoadingPlaceholder="loading.png" 
-                    ErrorPlaceholder="error.png" 
-                    Source="plus2.png">
-                </ffimageloading:CachedImage>
-            </Grid>
-        </Frame>
-  </ViewCell.View>
+                    <ffimageloading:CachedImage Grid.Column="1" 
+                        WidthRequest="45" 
+                        HeightRequest="45" 
+                        Aspect="AspectFit" 
+                        LoadingPlaceholder="loading.png" 
+                        ErrorPlaceholder="error.png" 
+                        Source="plus2.png">
+                    </ffimageloading:CachedImage>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ViewCell.View>
 </ViewCell>

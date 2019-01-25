@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"             
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
+             x:Class="App1.Views.Songs">
+    <xfg:ContentPageGloss.BackgroundGradient>
+        <xfg:Gradient Rotation="170">
+            <xfg:GradientStep StepColor="#f7797d" StepPercentage="0" />
+            <xfg:GradientStep StepColor="#FFFFFF" StepPercentage="1" />
+        </xfg:Gradient>
+    </xfg:ContentPageGloss.BackgroundGradient>    
+    <ContentPage.Content>
+        <ListView x:Name="AlbumLV" 
+              BackgroundColor="Transparent"
+              ItemTapped="OpenCameraSystem"
+              SeparatorVisibility="None"
+              HasUnevenRows="True">
+            <ListView.Header>
+                <StackLayout Padding="10,0,10,0">
+                    <BoxView Color="Transparent" HeightRequest="5" />
+                    <ffimageloading:CachedImage Aspect="AspectFit" 
+                    WidthRequest="100" HeightRequest="100"
+                    LoadingPlaceholder="loading.png" ErrorPlaceholder="error.png" Source="namaste.png">
+                    </ffimageloading:CachedImage>
+                    <BoxView Color="Transparent" HeightRequest="10" />
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="5" Padding="5,0,5,0">
+                            <Frame HasShadow="False" BackgroundColor="White" CornerRadius="25">
+
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20*" />
+                                        <ColumnDefinition Width="60*" />
+                                        <ColumnDefinition Width="20*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout Grid.Column="0" Grid.RowSpan="2" VerticalOptions="Center">
+                                        <ffimageloading:CachedImage Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"
+                                                WidthRequest="40" HeightRequest="40" Aspect="AspectFill"
+                                                LoadingPlaceholder="loading.png" 
+                                                ErrorPlaceholder="error.png" Source="swastika.png" />
+                                    </StackLayout>
+
+                                    <Label Grid.Row="0" Grid.Column="1" FontSize="Large" 
+                                           TextColor="#f7797d" HorizontalTextAlignment="Start" Text="{Binding SongName}" />
+                                    <Label Grid.Row="1" Grid.Column="1" FontSize="Small" 
+                                           TextColor="#CECECE" HorizontalTextAlignment="Start" Text="{Binding AlbumName}" />
+
+                                    <StackLayout Grid.Column="2" Grid.RowSpan="2" VerticalOptions="Center">
+                                        <ffimageloading:CachedImage Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"
+                                                WidthRequest="35" HeightRequest="35" Aspect="AspectFill"
+                                                LoadingPlaceholder="loading.png" 
+                                                ErrorPlaceholder="error.png" Source="user.png" />
+                                    </StackLayout>
+                                </Grid>
+
+                            </Frame>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

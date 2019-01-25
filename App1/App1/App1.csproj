@@ -15,6 +15,7 @@
     <PackageReference Include="FreshMvvm" Version="2.2.4" />
     <PackageReference Include="NUnitTestAdapter" Version="2.1.1" />
     <PackageReference Include="PropertyChanged.Fody" Version="2.6.0" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
     <PackageReference Include="Xamarin.CustomControls.AccordionView" Version="1.1.6" />
     <PackageReference Include="Xamarin.Essentials" Version="1.0.0" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.4.859" />
@@ -28,6 +29,9 @@
     </Compile>
     <Compile Update="Views\MarketplaceFeedView.xaml.cs">
       <DependentUpon>MarketplaceFeedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Songs.xaml.cs">
+      <DependentUpon>Songs.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -63,6 +67,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\TextOnlyViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Songs.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

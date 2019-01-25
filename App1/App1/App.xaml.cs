@@ -29,7 +29,7 @@ namespace App1
             var chat = new FreshNavigationContainer(chatPage, "ChatStack");
 
 
-            MainPage = new Dox();
+            MainPage = new Songs();
         }
 
         protected override void OnStart()

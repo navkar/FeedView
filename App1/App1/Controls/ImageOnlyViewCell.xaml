@@ -4,23 +4,27 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="App1.Views.ImageOnlyViewCell">
   <ViewCell.View>
-        <Frame BackgroundColor="Transparent" Margin="15,25,15,25" BorderColor="#e7e7e7" HasShadow="False" CornerRadius="5">
+        <StackLayout>
+            <Frame BackgroundColor="Transparent" Margin="15,25,15,25" BorderColor="#e7e7e7" HasShadow="False" CornerRadius="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
 
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="0" Padding="1,0,1,0">
+                        <Label TextColor="{StaticResource gradientBegin}" Text="{Binding OrgName}" />
+                    </StackLayout>
 
-                <StackLayout Grid.Row="0" Padding="1,0,1,0">
-                    <Label TextColor="{StaticResource gradientBegin}" Text="{Binding OrgName}" />
-                </StackLayout>
-
-                <ffimageloading:CachedImage Grid.Row="1" 
-                                    WidthRequest="400" HeightRequest="250" Aspect="AspectFit" LoadingPlaceholder="loading.png" 
-                                    ErrorPlaceholder="error.png" Source="{Binding IconUri}">
-                </ffimageloading:CachedImage>
-            </Grid>
-        </Frame>
+                    <ffimageloading:CachedImage Grid.Row="1" 
+                            WidthRequest="400" HeightRequest="250" 
+                            Aspect="AspectFit" 
+                            LoadingPlaceholder="loading.png" 
+                            ErrorPlaceholder="error.png" 
+                                                Source="{Binding IconUri}">
+                    </ffimageloading:CachedImage>
+                </Grid>
+            </Frame>
+        </StackLayout>
     </ViewCell.View>
 </ViewCell>

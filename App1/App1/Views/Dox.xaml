@@ -21,7 +21,8 @@
         <ListView x:Name="DoxLV" 
               BackgroundColor="Transparent"
               RowHeight="300" 
-              ItemTemplate="{StaticResource ViewTemplateSelector}"                        
+              ItemTemplate="{StaticResource ViewTemplateSelector}"         
+              ItemTapped="OpenCameraSystem"
               SeparatorVisibility="None"
               HasUnevenRows="True">
             <ListView.Header>
